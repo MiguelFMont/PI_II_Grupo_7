@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" class="logo32" type="image/png" href="../assets/logo32x32.png"/>
     <link rel="stylesheet" href="../styles/base.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>NotaDez</title>
 </head>
 <body>
     <div class="container">
@@ -19,25 +20,28 @@
         <div class="login">
             <div class="name">
                 <label>Nome</label>
-                <input placeholder="Nome Completo" type="text">
+                <input id="nome" placeholder="Nome Completo" type="text">
             </div>
             <div class="mail">
                 <label>Email</label>
-                <input placeholder="exemplo123@gmail.com" type="email">
+                <input id="email" placeholder="exemplo123@gmail.com" type="email">
             </div>
             <div class="tel">
                 <label>Telefone  </label>
-                <input placeholder="(12) 34567-8910" type="tel">
+                <input id="telefone" placeholder="(12) 34567-8910" type="tel">
             </div>
             <div class="password">
                 <label>Senha </label>
-                <input placeholder="•••••••••" type="password">
+                <input id="senha" placeholder="•••••••••" type="password">
             </div>
         </div>
         <div>
-            <button class="buttonSignUp">Enviar</button>
+            <button class="buttonSignUp" onclick="main();">Enviar</button>
         </div>
         <a href="../index.html" class="backButton">Voltar</a>
     </div>
+
+    <script src="../scripts/pageCadastro.js"></script>
+    <!-- Foi colocado no final do body para garantir que o DOM esteja carregado antes da execução do script (Miguel) -->
 </body>
 </html>
