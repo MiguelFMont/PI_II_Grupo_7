@@ -16,6 +16,7 @@
     --color3: #212121;
     --color4: #b91717;
     --color5: #fbea4f;
+    --color6: #2277ff;
 
     --lightgrey: #d3d3d3;
 }
@@ -26,25 +27,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--color1) 50%, var(--color5) 50%);
-    background-position: 0 0, 100% 100%;
-    background-repeat: no-repeat;
+    background: var(--color1);
 }
 
 .container {
     max-width: 400px;
     width: 100%;
     height: 100%;
-    max-height: 600px;
-    margin: auto;
+    max-height: 620px;
+    margin: 40px;
     padding: 20px;
     border: 1px solid var(--lightgrey);
     border-radius: 8px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
     text-align: center;
     display: grid;
     grid-template-rows: 1fr 0fr 2fr 0fr 0fr;
-    background: var(--color2);
+    /*border: none;*/
 }
 
 .title {
@@ -94,26 +92,65 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: 15px;
-    border: 1px solid var(--lightgrey);
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
-    border-radius: 8px;
+    border: 1px solid var(--black);
+    border-radius: 50px;
     max-height: 70px;
     width: 100%;
     padding: 8px;
     font-weight: 400;
     font-size: 1.2rem;
+    height: 50px;
+    position: relative;
 }
 
 .mail input, .password input, .name input, .tel input {
     border: none;
-    border-bottom: 2px solid var(--lightgrey);
     border-radius: 8px;
     outline: none;
     width: 100%;
     font-size: 1rem;
-    margin-top: 5px;
-    padding-left: 8px;
-    background: var(--color2);
+    padding-left: 5px;
+    background: var(--color1);
+    height: 100%;
+}
+
+.mail label, .password label, .name label, .tel label {
+    position: absolute;
+    z-index: 100;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    background: var(--color1);
+    font-size: 1rem;
+    color: var(--grey);
+}
+
+.mail input:focus + label,
+.mail input:not(:placeholder-shown) + label,
+.password input:focus + label,
+.password input:not(:placeholder-shown) + label,
+.name input:focus + label,
+.name input:not(:placeholder-shown) + label,
+.tel input:focus + label,
+.tel input:not(:placeholder-shown) + label {
+    position: absolute;
+    z-index: 100;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    background: var(--color1);
+    font-size: 0.875rem;
+    padding: 0 4px;
+    color: var(--color6);
+}
+
+.mail:has(input:focus),
+.mail:has(input:not(:placeholder-shown)),
+.password:has(input:focus),
+.password:has(input:not(:placeholder-shown)),
+.name:has(input:focus),
+.name:has(input:not(:placeholder-shown)),
+.tel:has(input:focus),
+.tel:has(input:not(:placeholder-shown)) {
+    border: 1px solid var(--color6);
 }
 
 .forgotPassword {
@@ -132,18 +169,18 @@ body {
     margin-left: 5px;
 }
 
-.buttonLogin {
-    margin-bottom: 50px;
-}
-
-.buttonSignUp {
-    margin-bottom: 12px;
+.buttonsCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    height: 100%;
+    margin-bottom: 15px;
 }
 
 .buttonLogin, .buttonSignUp {
-    width: 150px;
-    padding: 10px;
-    border: none;
+    padding: 10px 40px;
+    text-decoration: none;
     border-radius: 50px;
     background-color: var(--black);
     color: var(--color2);
@@ -167,7 +204,6 @@ body {
     text-decoration: none;
     color: var(--black);
     font-weight: bold;
-    margin-left: 5px;
 }
 
 .signUpLink:hover {
