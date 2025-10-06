@@ -1,0 +1,29 @@
+{
+  "name": "pi_ii_grupo_7",
+  "version": "1.0.0",
+  "description": "Pacote dedicado ao Projeto Integrador II, grupo 7 da PUC-Campinas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelFMont/PI_II_Grupo_7.git"
+  },
+  "keywords": [
+    "node",
+    "backend"
+  ],
+  "author": "Cezar Rull, Davi Vitoreti, Juan Souza, Miguel Fernandes, Rafael Almeida.",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "path": "^0.12.7"
+  },
+  "bugs": {
+    "url": "https://github.com/MiguelFMont/PI_II_Grupo_7/issues"
+  },
+  "homepage": "https://github.com/MiguelFMont/PI_II_Grupo_7#readme"
+}
