@@ -120,7 +120,8 @@ body {
 
 /* Cor do cursor de texto dentro dos inputs */
 input {
-    caret-color: var(--color6);
+    caret-color: var(--color5);
+    /* caret-color: var(--color6); */
 }
 
 /* Estilo dos inputs (sem borda, fundo claro, etc.) */
@@ -163,7 +164,8 @@ input {
     background: var(--color1);
     font-size: 0.875rem;
     padding: 0 4px;
-    color: var(--color6);
+    color: var(--color5);
+    /* color: var(--color6); */
 }
 
 /* Bordas azuis quando o campo está ativo/preenchido */
@@ -175,7 +177,8 @@ input {
 .name:has(input:not(:placeholder-shown)),
 .tel:has(input:focus),
 .tel:has(input:not(:placeholder-shown)) {
-    border: 1px solid var(--color6);
+    border: 1px solid var(--color5);
+    /* border: 1px solid var(--color6); */
 }
 
 /* ================================================
