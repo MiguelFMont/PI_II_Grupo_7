@@ -240,15 +240,17 @@ input {
 }
 
 /* Efeito hover (amarelo) */
-.buttonLogin:hover, .buttonSignUp:hover {
+.buttonLogin:hover, .buttonSignUp:hover, .buttonLogin:focus, .buttonSignUp:focus {
     background-color: var(--color5);
     color: var(--black);
+    outline: none;
 }
 
 /* Efeito ao clicar (reduz tamanho levemente) */
 .buttonLogin:active, .buttonSignUp:active {
     transform: scale(0.98);
 }
+
 
 /* ================================================
     LINKS DE TEXTO (CADASTRAR / VOLTAR)
@@ -259,7 +261,9 @@ input {
     font-weight: bold;
 }
 
-.signUpLink:hover, .backButton:hover {
+
+.signUpLink:hover, .backButton:hover, .backButton:focus, .signUpLink:focus {
     text-decoration: underline;
     cursor: pointer;
+    outline: none; /* remove a borda de foco padrão quando aperta tab (Miguel)*/
 }
