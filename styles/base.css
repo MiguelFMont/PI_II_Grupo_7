@@ -50,9 +50,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
 }
 
+/*
 .aline {
 border: 2px solid black;
 position: absolute;
@@ -66,21 +66,22 @@ align-self: center;
 position: absolute;
 z-index: 100;
 }
-
+*/
 
 .monsterOne, .monsterTwo, .monsterThree {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    box-shadow: -15px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: -15px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 .monsterOne {
     background: var(--color5);
     height: 230px;
     width: 100px;
-    margin-left: -150px;
+    margin-left: -180px;
+    margin-bottom: -70px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -90,8 +91,8 @@ z-index: 100;
     height: 300px;
     width: 140px;
     position: absolute;
-    margin-right: -200px;
-    margin-top: -70px;
+    margin-right: -150px;
+    margin-top: 0px;
 }
 
 .monsterThree {
@@ -99,8 +100,7 @@ z-index: 100;
     height: 150px;
     width: 200px;
     position: absolute;
-    margin-right: -50px;
-    margin-bottom: -80px;
+    margin-bottom: -150px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 }
