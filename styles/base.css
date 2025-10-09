@@ -13,12 +13,12 @@
     --white: #ffffff;
     --grey: #808080;
 
-    --color1: #f6f6f6;   /* Fundo principal (claro) */
+    --color1: #ebe8e8;   /* Fundo principal (claro) */
     --color2: #e8e8e8;   /* Fundo secundário */
-    --color3: #212121;   /* Cor escura para textos */
-    --color4: #b91717;   /* Vermelho (erros ou alertas) */
-    --color5: #fbea4f;   /* Amarelo (hover de botões) */
-    --color6: #2277ff;   /* Azul principal (destaques e foco) */
+    --color3: #e30075;   /* Cor escura para textos */
+    --color4: #ff4a4a;   /* Vermelho (erros ou alertas) */
+    --color5: #ffb319;   /* Amarelo (hover de botões) */
+    --color6: #615c5c;   /* cinza (hover alternativo de botões) */
 
     --lightgrey: #d3d3d3; /* Bordas e separadores suaves */
 }
@@ -35,11 +35,93 @@ body {
     background: var(--color1);
 }
 
+.background {
+    width: 85%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerMonster {
+    border: 1px solid blue;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monsterOne {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--color5);
+    height: 230px;
+    width: 100px;
+    margin-left: -75px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.monsterTwo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--color3);
+    height: 150px;
+    width: 200px;
+    margin-right: -100px;
+    margin-bottom: -80px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.eyeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.eye {
+    height: 25px;
+    width: 25px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.monsterOne .eye {
+    position: absolute;
+    height: 35px;
+    width: 40px;
+}
+
+.pupil {
+    height: 15px;
+    width: 15px;
+    background: var(--black);
+    border-radius: 50%;
+}
+
+.monsterOne .pupil {
+    height: 15px;
+    width: 15px;
+}
+
 /* ================================================
     CONTAINER PRINCIPAL (ÁREA CENTRAL)
    ================================================ */
 .container {
-    max-width: 400px;
     width: 100%;
     height: 620px;
     margin: 40px;
@@ -60,17 +142,17 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/* 
 .title h1 {
     font-size: 2.5rem;
     color: var(--black);
-}
+} */
 
 /* Ícone ou logotipo rotacionado levemente */
 .logo {
-    max-height: 60px;
-    max-width: 60px;
-    transform: rotate(12deg);
+    max-height: 180px;
+    max-width: 200px;
+    /*transform: rotate(12deg);*/
     margin-left: -10px;
 }
 
@@ -97,12 +179,13 @@ body {
     gap: 15px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
 }
 
 /* Campos de entrada (e-mail, senha, nome, telefone) */
 .mail, .password, .name, .tel {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -120,7 +203,8 @@ body {
 
 /* Cor do cursor de texto dentro dos inputs */
 input {
-    caret-color: var(--color6);
+    caret-color: var(--color5);
+    /* caret-color: var(--color6); */
 }
 
 /* Estilo dos inputs (sem borda, fundo claro, etc.) */
@@ -163,7 +247,8 @@ input {
     background: var(--color1);
     font-size: 0.875rem;
     padding: 0 4px;
-    color: var(--color6);
+    color: var(--color5);
+    /* color: var(--color6); */
 }
 
 /* Bordas azuis quando o campo está ativo/preenchido */
@@ -175,7 +260,8 @@ input {
 .name:has(input:not(:placeholder-shown)),
 .tel:has(input:focus),
 .tel:has(input:not(:placeholder-shown)) {
-    border: 1px solid var(--color6);
+    border: 1px solid var(--color5);
+    /* border: 1px solid var(--color6); */
 }
 
 /* ================================================
@@ -240,15 +326,17 @@ input {
 }
 
 /* Efeito hover (amarelo) */
-.buttonLogin:hover, .buttonSignUp:hover {
+.buttonLogin:hover, .buttonSignUp:hover, .buttonLogin:focus, .buttonSignUp:focus {
     background-color: var(--color5);
     color: var(--black);
+    outline: none;
 }
 
 /* Efeito ao clicar (reduz tamanho levemente) */
 .buttonLogin:active, .buttonSignUp:active {
     transform: scale(0.98);
 }
+
 
 /* ================================================
     LINKS DE TEXTO (CADASTRAR / VOLTAR)
@@ -259,7 +347,9 @@ input {
     font-weight: bold;
 }
 
-.signUpLink:hover, .backButton:hover {
+
+.signUpLink:hover, .backButton:hover, .backButton:focus, .signUpLink:focus {
     text-decoration: underline;
     cursor: pointer;
+    outline: none; /* remove a borda de foco padrão quando aperta tab (Miguel)*/
 }
