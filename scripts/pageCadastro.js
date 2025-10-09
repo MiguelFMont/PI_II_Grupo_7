@@ -1,7 +1,7 @@
 
 function main() {
-  const nome = document.getElementById('nome').value;
+  const nome = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const telefone = document.getElementById('telefone').value;
-  const senha = document.getElementById('senha').value;
+  const senha = document.getElementById('password').value;
 }

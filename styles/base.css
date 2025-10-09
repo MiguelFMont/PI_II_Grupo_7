@@ -52,22 +52,6 @@ body {
     align-items: center;
 }
 
-/*
-.aline {
-border: 2px solid black;
-position: absolute;
-height: 400px;
-z-index: 100;
-}
-.aline2 {
-border: 2px solid black;
-width: 400px;
-align-self: center;
-position: absolute;
-z-index: 100;
-}
-*/
-
 .monsterOne, .monsterTwo, .monsterThree {
     position: absolute;
     display: flex;
@@ -123,6 +107,7 @@ z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .monsterOne .eye {
@@ -136,6 +121,7 @@ z-index: 100;
     width: 15px;
     background: var(--black);
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .monsterOne .pupil {
@@ -171,6 +157,74 @@ z-index: 100;
     border-radius: 50%;
     position: absolute;
     margin-top: 75px;
+}
+
+.pupil, .mouth {
+    transition: transform 0.1s ease-out;
+}
+
+.eye.closed {
+    height: 10px;
+    background: black;
+    border-radius: 10px;
+    margin-right: 30px;
+    border-radius: 100% 100% 70% 70%;
+    transform: scaleY(1.2);
+}
+
+.eye.closed .pupil {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.eye.look-right {
+    margin-left : 50px;
+}
+
+.monsterOne .eye.look-right {
+    height: 25px;
+    width: 30px;
+    margin-left: 70px;
+}
+
+.mouth.closed {
+    height: 8px;
+    width: 25px;
+    margin-right: 20px;
+    border-radius: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Estado inicial: todos fora da tela */
+.monsterOne, .monsterTwo, .monsterThree {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+
+.monsterOne.enter-top {
+    animation: enterTop 0.75s forwards;
+}
+@keyframes enterTop {
+    0% { transform: translateY(300px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.monsterTwo.enter-bottom {
+    animation: enterBottom 0.75s forwards;
+}
+@keyframes enterBottom {
+    0% { transform: translateY(-300px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.monsterThree.enter-left {
+    animation: enterLeft 0.75s forwards;
+}
+@keyframes enterLeft {
+    0% { transform: translateX(-300px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 /* ================================================
