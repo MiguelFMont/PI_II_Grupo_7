@@ -17,6 +17,7 @@
   "author": "Cezar Rull, Davi Vitoreti, Juan Souza, Miguel Fernandes, Rafael Almeida.",
   "license": "ISC",
   "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",

@@ -38,43 +38,68 @@ body {
 .background {
     width: 85%;
     height: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--color6);
 }
 
 .containerMonster {
-    border: 1px solid blue;
     height: 400px;
     width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid blue;
 }
 
-.monsterOne {
+.aline {
+border: 2px solid black;
+position: absolute;
+height: 400px;
+z-index: 100;
+}
+.aline2 {
+border: 2px solid black;
+width: 400px;
+align-self: center;
+position: absolute;
+z-index: 100;
+}
+
+
+.monsterOne, .monsterTwo, .monsterThree {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    box-shadow: -15px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.monsterOne {
     background: var(--color5);
     height: 230px;
     width: 100px;
-    margin-left: -75px;
+    margin-left: -150px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
 
 .monsterTwo {
+    background: var(--color4);
+    height: 300px;
+    width: 140px;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    margin-right: -200px;
+    margin-top: -70px;
+}
+
+.monsterThree {
     background: var(--color3);
     height: 150px;
     width: 200px;
-    margin-right: -100px;
+    position: absolute;
+    margin-right: -50px;
     margin-bottom: -80px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
@@ -353,3 +378,4 @@ input {
     cursor: pointer;
     outline: none; /* remove a borda de foco padrão quando aperta tab (Miguel)*/
 }
+
