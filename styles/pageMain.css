@@ -7,18 +7,19 @@
     box-sizing: border-box;
 }
 
-
 /* Paleta de cores principal usada no projeto */
 :root {
     --black: #000000;
     --white: #ffffff;
     --grey: #808080;
+    --shadow: rgba(0, 0, 0, 0.2);
 
     --color1: #ebe8e8;   /* Fundo principal (claro) */
     --color2: #e8e8e8;   /* Fundo secundário */
     --color3: #e30075;   /* Cor escura para textos */
     --color4: #ff4a4a;   /* Vermelho (erros ou alertas) */
     --color5: #ffb319;   /* Amarelo (hover de botões) */
+    --color5Hover: #e39e13; /* Amarelo escuro (hover de botões) */
     --color6: #615c5c;   /* cinza (hover alternativo de botões) */
 
     --lightgrey: #d3d3d3; /* Bordas e separadores suaves */
@@ -31,11 +32,10 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--color1);
-    /* background: linear-gradient(45deg, var(--color1), var(--color2)); */
 }
 
 /* ================================================
-   CABEÇALHO FIXO (LOGO + LINHA HORIZONTAL)
+    CABEÇALHO FIXO (LOGO + LINHA HORIZONTAL)
    ================================================ */
 .header {
     position: fixed;
@@ -44,32 +44,27 @@ body {
     width: 100%;
     height: 65px;   
     background-color: var(--white);
-    border-bottom: 2px solid var(--color5); /* linha amarela */
+    border-bottom: 2px solid var(--color5);
     display: inline-flex;
     align-items: center;
     justify-content: space-between;  
-    padding-left: 10px; /* desloca a logo um pouco à esquerda */
+    padding-left: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
 .linhaVertical {
-    height: 40px;                   /* igual à altura do ícone */
-    border-left: 2px solid var(--color5); /* linha amarela */
-    margin: 0 16px 0 0;             /* espaçamento à direita */
+    height: 38px;                   
+    border-left: 2px solid var(--color5);
+    margin: 0 16px 0 0;      
     display: inline-block;
     vertical-align: middle;
 }
 
-
-/* 3 pontos de configuração */
-
 .pointSettings {
     height: 40px;
     width: 40px;
-    margin-right: 20px; /* espaço à direita */
-    cursor: pointer;
-    /* border: 1px solid red; */
+    margin-right: 20px;
     object-fit: cover;
     color: var(--color5);
     display: flex;
@@ -77,21 +72,32 @@ body {
     justify-content: center;
     font-size: 24px;
     padding-left: -100%;
-    
 }
 
-.userIcon {
+.ph-user {
     height: 40px;
     width: 40px;
-    margin-right: 50px; /* espaço à direita */
+    margin-right: 10px;
     cursor: pointer;
-    /* border: 1px solid red; */
     border-radius: 50%;
     object-fit: cover;
     color: var(--color5);
-}   
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ph-user:hover {
+    color: var(--color5Hover);
+}
 
 /* Logo dentro do header */
+.logoHeader a {
+    text-decoration: none;
+}
+
 .logoHeader .logo {
     height: 54px;
     width: auto;
@@ -107,7 +113,7 @@ body {
     ================================================
 */
 .middleSeach {
-    position: relative; /* novo: define contêiner relativo */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +121,7 @@ body {
 
 .searchInput {
     width: 420px;
-    padding: 10px 18px 10px 40px; /* padding-left aumentado para 40px para espaço da lupa */
+    padding: 10px 18px 10px 40px;
     border-radius: 22px;
     font-size: 1rem;
     border: none;
@@ -124,18 +130,35 @@ body {
     outline: none;
 }
 
+.searchInput:focus {
+    border: 1px solid var(--color5);
+    box-shadow: #e39e13 0px 0px 8px;
+}
+
+input {
+    caret-color: var(--grey);
+}
+
 #lupa {
     position: absolute;
-    left: 12px; /* ajuste da posição da lupa */
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 22px;
     color: #888;
-    pointer-events: none; /* não interativo */
+    pointer-events: none;
 }
 .searchInput::placeholder {
     color: #888;
     opacity: 1;
+}
+
+.ph-list-bullets {
+    cursor: pointer;
+}
+
+.ph-list-bullets:hover {
+    color: var(--color5Hover);
 }
 
 .content {
@@ -145,7 +168,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    border: 1px solid black;
 }
 
 .searchContent {
@@ -159,9 +181,9 @@ body {
 }
 
 .contentMain {
-    border: 1px solid blue;
     width: 100%;
     height: 100vh;
+    padding: 30px 100px;
 }
 
 .searchContent ul {
@@ -205,4 +227,169 @@ body {
 
 .searchContent ul li a p {
     display: none;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: max-content;
+    padding: 12px 8px;
+    position: absolute;
+    left: 65px;
+    font-size: 0.9rem;
+    color: var(--white);
+    background: var(--color3);
+
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s ease forwards;
 }
+
+.searchContent ul li a p::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--color3);
+}
+
+.searchContent ul li a:hover p {
+    display: flex;
+}
+
+.searchContent ul li a:focus p {
+    display: none;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ================================================
+    DASHBOARD CARDS
+   ================================================ */
+/*
+   /////////////////// NÃO APAGAR ////////////////////////
+.pageTitle {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px   ;
+}
+
+.pageTitle h1 {
+    font-size: 2rem;
+    color: var(--color6);
+}
+
+
+.dashboardCard {
+    height: 250px;
+    width: 280px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--shadow);
+    cursor: pointer ;
+}
+
+.dashboardCard:hover {
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.imageCard {
+    height: 60%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: url(../assets/exemploTeste.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+//
+.imageCard::after {
+    display: block;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: var(--color3);
+    opacity: 0.6;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+//
+
+.contentCard {
+    height: 40%;
+    width: 100%;
+    background: var(--white);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 25px;
+}
+
+.titleCard {
+    display: flex;
+    align-items: center;
+}
+
+.idCard {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color6);
+}
+
+.spaceCard {
+    background: var(--color6);
+    height: 2px;
+    width: 6px;
+    margin: 0px 4px;
+    border-radius: 26px;
+}
+
+.nameCard {
+    font-size: 1rem;
+    color: var(--color6);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.descriptionCard {
+    font-size: 0.9rem;
+    color: var(--color6);
+    margin-top: -15px;
+    font-weight: 500;
+}
+
+.itensCard ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.itensCard ul li {
+    color: var(--color6);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.itensCard ul li:hover {
+    color: var(--color5);
+}
+
+*/
