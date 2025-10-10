@@ -97,11 +97,6 @@ body {
     width: auto;
 }
 
-/* Evita que o conteúdo fique escondido atrás do header */
-.content {
-    margin-top: 90px;
-}
-
 .containerProfile {
     display: flex;
     align-items: center;
@@ -143,3 +138,71 @@ body {
     opacity: 1;
 }
 
+.content {
+    margin-top: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.searchContent {
+    width: 4vw;
+    height: 100%;
+    background: var(--grey);
+    position: fixed;
+    top: 65px;
+    left: 0;
+    border-right: 2px solid var(--color5);
+}
+
+.contentMain {
+    border: 1px solid blue;
+    width: 100%;
+    height: 100vh;
+}
+
+.searchContent ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.searchContent ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+}
+
+.searchContent ul li:hover {
+    background: var(--color6);
+}
+
+.searchContent ul li a {
+    text-decoration: none;
+    color: var(--color5);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.searchContent ul li a:focus {
+    color: var(--color3);
+    background: var(--lightgrey);
+}
+
+.searchContent ul li a p {
+    display: none;
+}
