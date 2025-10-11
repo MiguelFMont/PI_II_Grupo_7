@@ -29,7 +29,7 @@ Um **aplicativo universitário para professores**, que facilita a gestão de mat
 ## 👥 Equipe de Desenvolvimento
 
 - **Cezar Augusto Fernandez Rull**  
-- **Miguel Fernandez Monteiro**  
+- **Miguel Fernandes Monteiro**  
 - **Juan Desiderio de Souza**  
 - **Davi José Betuolo Vioreti**  
 - **Rafael Almeida Moreira**  
