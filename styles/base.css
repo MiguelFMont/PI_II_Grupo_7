@@ -292,7 +292,6 @@ body {
     justify-content: center;
 }
 
-/* Campos de entrada (e-mail, senha, nome, telefone) */
 .mail, .password, .name, .tel {
     max-width: 400px;
     display: flex;
@@ -310,12 +309,10 @@ body {
     position: relative;
 }
 
-/* Cor do cursor de texto dentro dos inputs */
 input {
     caret-color: var(--color5);
 }
 
-/* Estilo dos inputs (sem borda, fundo claro, etc.) */
 .mail input, .password input, .name input, .tel input {
     border: none;
     border-radius: 8px;
@@ -327,7 +324,6 @@ input {
     height: 100%;
 }
 
-/* Labels (ficam sobre o input e sobem ao digitar) */
 .mail label, .password label, .name label, .tel label {
     position: absolute;
     z-index: 100;
@@ -339,7 +335,6 @@ input {
     pointer-events: none;
 }
 
-/* Efeito do label ao focar ou preencher o campo */
 .mail input:focus + label,
 .mail input:not(:placeholder-shown) + label,
 .password input:focus + label,
@@ -358,7 +353,6 @@ input {
     color: var(--color5);
 }
 
-/* Bordas azuis quando o campo está ativo/preenchido */
 .mail:has(input:focus),
 .mail:has(input:not(:placeholder-shown)),
 .password:has(input:focus),
@@ -368,6 +362,16 @@ input {
 .tel:has(input:focus),
 .tel:has(input:not(:placeholder-shown)) {
     border: 1px solid var(--color5);
+}
+
+.mail.error,
+.password.error {
+    border: 1px solid var(--color4) !important;
+}
+
+.mail.error label,
+.password.error label {
+    color: var(--color4) !important;
 }
 
 /* ================================================
@@ -397,6 +401,10 @@ input {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+}
+
+.buttonsCheck button {
+    border: none;
 }
 
 /* Ajuste de alinhamento específico da página de cadastro */
