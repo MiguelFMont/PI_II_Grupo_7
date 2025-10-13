@@ -152,7 +152,6 @@ body {
     DASHBOARD CARDS
    ================================================ */
 /*
-   /////////////////// NÃO APAGAR ////////////////////////
 .pageTitle {
     height: min-content;
     width: 100%;
@@ -266,3 +265,125 @@ body {
 }
 
 */
+
+/*///////////////// MONSTERS STATIC ///////////////////////*/
+.containerMonster {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.monsterOne, .monsterTwo, .monsterThree {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: -15px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.monsterOne {
+    background: var(--color5);
+    height: 140px;
+    width: 50px;
+    margin-left: -150px;
+    margin-bottom: -70px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.monsterTwo {
+    background: var(--color4);
+    height: 210px;
+    width: 80px;
+    position: absolute;
+    margin-right: -130px;
+    margin-top: 0px;
+}
+
+.monsterThree {
+    background: var(--color3);
+    height: 90px;
+    width: 120px;
+    position: absolute;
+    margin-bottom: -120px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.eyeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 25px;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.eye {
+    height: 20px;
+    width: 20px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.monsterOne .eye {
+    position: absolute;
+    height: 20px;
+    width: 25px;
+}
+
+.pupil {
+    height: 10px;
+    width: 10px;
+    background: var(--black);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.monsterOne .mouth {
+    width: 30px;
+    height: 10px;
+    background: var(--black);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: absolute;
+    margin-top: 65px;
+}
+
+.monsterTwo .mouth {
+    height: 8px;
+    width: 40px;
+    background: var(--black);
+    position: absolute;
+    margin-top: 75px;
+    border-radius: 50px;
+    transform: rotate(10deg);
+}
+
+.monsterThree .mouth {
+    background: var(--black);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 55px;
+}
+
+.pupil, .mouth {
+    transition: transform 0.1s ease-out;
+}
+.card {
+    font-size: 2rem;
+    font-weight: bolder;
+}

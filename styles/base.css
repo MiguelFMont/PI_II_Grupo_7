@@ -57,7 +57,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    box-shadow: -15px 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: -15px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .monsterOne {
@@ -122,11 +122,6 @@ body {
     background: var(--black);
     border-radius: 50%;
     transition: all 0.3s ease;
-}
-
-.monsterOne .pupil {
-    height: 15px;
-    width: 15px;
 }
 
 .monsterOne .mouth {
