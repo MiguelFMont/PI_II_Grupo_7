@@ -14,31 +14,11 @@
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <script src="../scripts/include.js" defer></script>
 </head>
 
 <body>
-    <div class="header">
-        <div class="logoHeader">
-            <a href="../pages/mainPage.html">
-                <img class="logo" src="../assets/Logo2.png" alt="">
-            </a>
-        </div>
-        <div class="middleSeach">
-            <input class="searchInput" type="text" placeholder=" ">
-            <label for="search"><i id="lupa" class="ph ph-magnifying-glass"></i></label>
-        </div>
-        <div class="containerProfile">
-            <div class="linhaVertical"></div>
-            <div class="usuarioHeader">
-                <i class="ph-fill ph-user"></i>
-            </div>
-            <div class="pointSettings">
-                <i class="ph ph-list-bullets"></i>
-                <a href="#"></a>
-            </div>
-                
-        </div>
-    </div>
+    <div id="header"></div>
     <div class="content">
         <div class="searchContent">
             <ul>
@@ -112,5 +92,11 @@
     <div class="footer">
 
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header", "../components/header.html");
+        });
+    </script>
 </body>
 </html>

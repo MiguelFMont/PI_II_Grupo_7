@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #808080;
+    --shadow: rgba(0, 0, 0, 0.1);
+
+    --color1: #ebe8e8;   /* Fundo principal (claro) */
+    --color2: #e8e8e8;   /* Fundo secundário */
+    --color3: #e30075;   /* Cor escura para textos */
+    --color4: #ff4a4a;   /* Vermelho (erros ou alertas) */
+    --color5: #ffb319;   /* Amarelo (hover de botões) */
+    --color5Hover: #e39e13; /* Amarelo escuro (hover de botões) */
+    --color6: #615c5c;   /* cinza (hover alternativo de botões) */
+
+    --lightgrey: #d3d3d3; /* Bordas e separadores suaves */
+}
+
+.header {
+    font-family: "Roboto", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;   
+    background-color: var(--white);
+    border-bottom: 2px solid var(--color5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;  
+    padding-left: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.linhaVertical {
+    height: 38px;                   
+    border-left: 2px solid var(--color5);
+    margin: 0 16px 0 0;      
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ph-user {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
+    color: var(--color5);
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ph-user:hover {
+    color: var(--color5Hover);
+}
+
+/* Logo dentro do header */
+.logoHeader a {
+    text-decoration: none;
+}
+
+.logoHeader .logo {
+    height: 54px;
+    width: auto;
+}
+
+.containerProfile {
+    display: flex;
+    align-items: center;
+}
+
+/* 
+    BARRA DE PESQUISA (CENTRALIZADA NO HEADER)
+    ================================================
+*/
+.middleSeach {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput {
+    width: 420px;
+    padding: 10px 18px 10px 40px;
+    border-radius: 22px;
+    font-size: 1rem;
+    border: none;
+    background: #e5e5e5;
+    color: #222;
+    outline: none;
+}
+
+.searchInput:focus {
+    border: 1px solid var(--color5);
+    box-shadow: #e39e13 0px 0px 8px;
+}
+
+input {
+    caret-color: var(--grey);
+}
+
+#lupa {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #888;
+    pointer-events: none;
+}
+
+.searchInput::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.buttonOptions {
+    border: none;
+    background: none;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-left: -100%;
+    color: var(--color5);
+}
+
+.ph-list-bullets {
+    cursor: pointer;
+}
+
+.ph-list-bullets:hover {
+    color: var(--color5Hover);
+}
+
+.pointSettings {
+    position: relative;
+    display: inline-block;
+}
+
+.optionsHeader {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    background: var(--white);
+    box-shadow: -4px 4px 8px var(--shadow);
+    border-bottom-left-radius: 8px;
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.optionsHeader.show {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.optionsHeader ul {
+    height: 100%;
+    width: 100%;
+}
+
+.optionsHeader ul li {
+    list-style: none;
+}
+
+.optionsHeader ul li a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    font-size: 0.865rem;
+    color: var(--black);
+    border-bottom: 1px solid var(--grey);
+    gap: 5px;
+}
+
+.optionsHeader ul li:last-child a {
+    border-bottom: 0;
+    border-bottom-left-radius: 8px;
+}
+
+.optionsHeader ul li a:hover {
+    background: var(--color2);
+}
