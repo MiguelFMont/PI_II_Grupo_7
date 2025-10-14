@@ -13,7 +13,7 @@
     --white: #ffffff;
     --grey: #808080;
     --shadow: rgba(0, 0, 0, 0.2);
-    --color5Shadow: rgba(97, 92, 92, 0.5);
+    --color6Shadow: rgba(97, 92, 92, 0.5);
 
     --color1: #ebe8e8;   /* Fundo principal (claro) */
     --color2: #e8e8e8;   /* Fundo secundário */
@@ -286,7 +286,7 @@ body {
 .contentTurma button {
     border: none;
     height: 35px;
-    width: 100px;
+    width: 110px;
     border-radius: 50px;
     color: var(--color5);
     font-weight: 500;
@@ -296,6 +296,216 @@ body {
 }
 
 .contentTurma button:hover {
-    background: var(--color5Shadow);
+    background: var(--color6Shadow);
+    cursor: pointer;
+}
+
+.createBody {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: var(--color6Shadow);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.createBody.active {
+    display: flex;
+    opacity: 1;
+}
+
+.createContainer {
+    position: absolute;
+    height: 500px;
+    width: 600px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--color1);
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+.closeCreateClass {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.closeCreateClass:hover {
+    color: var(--color6);
+    cursor: pointer;
+}
+
+.nameClass, .codeClass, .teste, .periodoDaTurma, .turmas {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    border: 1px solid var(--black);
+    border-radius: 50px;
+    max-height: 70px;
+    width: 100%;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    height: 50px;
+    position: relative;
+}
+
+.nameClass input, .codeClass input, .teste input, .periodoDaTurma select, .turmas select {
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 5px;
+    background: var(--color1);
+    height: 100%;
+    caret-color: var(--color5);
+}
+
+.nameClass label, .codeClass label, .teste label, .periodoDaTurma label, .turmas label {
+    position: absolute;
+    z-index: 100;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    background: var(--color1);
+    font-size: 1rem;
+    color: var(--grey);
+    pointer-events: none;
+}
+
+.nameClass input:focus + label,
+.nameClass input:not(:placeholder-shown) + label,
+.codeClass input:focus + label,
+.codeClass input:not(:placeholder-shown) + label,
+.teste input:focus + label,
+.teste input:not(:placeholder-shown) + label,
+.periodoDaTurma select:focus + label,
+.periodoDaTurma select:not(:placeholder-shown) + label,
+.turmas select:focus + label,
+.turmas select:not(:placeholder-shown) + label {
+    position: absolute;
+    z-index: 100;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    background: var(--color1);
+    font-size: 0.875rem;
+    padding: 0 4px;
+    color: var(--color5);
+}
+
+.nameClass:has(input:focus),
+.nameClass:has(input:not(:placeholder-shown)),
+.codeClass:has(input:focus),
+.codeClass:has(input:not(:placeholder-shown)),
+.teste:has(input:focus),
+.teste:has(input:not(:placeholder-shown)),
+.periodoDaTurma:has(select:focus),
+.periodoDaTurma:has(select:not(:placeholder-shown)),
+.turmas:has(select:focus),
+.turmas:has(select:not(:placeholder-shown)) {
+    border: 1px solid var(--color5);
+}
+
+.buttonCreate {
+    margin-top: 30px;
+}
+
+.buttonCreate button {
+    border: none;
+    height: 35px;
+    width: 120px;
+    border-radius: 50px;
+    background: var(--color5);
+    color: var(--black);
+    font-weight: 500;
+}
+
+.buttonCreate button:hover {
+    background: var(--color5Hover);
+    cursor: pointer;
+}
+
+.closedCreate {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: var(--color6Shadow);
+}
+
+.closedCreate.active{
+    display: flex;
+    opacity: 1;
+}
+
+.alertClosed {
+    height: 170px;
+    width: 300px;
+    border-radius: 16px;
+    background: var(--color2);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.alertClosed h1 {
+    color: var(--color4);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.alertClosed p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+}
+
+.buttonAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+} 
+
+.buttonAlert button {
+    height: 35px;
+    width: 100px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.bntYes {
+    background: var(--shadow);
+}
+
+.bntYes:hover {
+    background: var(--color6Shadow);
+    cursor: pointer;
+}
+
+.bntNo {
+    background: var(--color5);
+}
+
+.bntNo:hover {
+    background: var(--color5Hover);
     cursor: pointer;
 }

@@ -13,9 +13,72 @@
     <div class="containerTurmas">
         <div class="desingTurmas">
             <img src="../assets/flatGrup.png" alt="">
-            <p>Você ainda não tem turmas</p>
+            <p>Você ainda não tem uma diciplina</p>
             <div class="contentTurma">
-                <button>Criar turma</button>
+                <button id="criarTurmaBtn">Criar diciplina</button>
+            </div>
+        </div>
+    </div>
+    <div class="createBody">
+        <div class="createContainer">
+            <h1>Criar diciplina</h1>
+            <div class="closeCreateClass">
+                <i class="ph ph-x"></i>
+            </div>
+            <div class="nameClass">
+                <input type="text" placeholder=" " id="nomeDaTurma">
+                <label for="text">Nome da diciplina</label>
+            </div>
+            <div class="codeClass">
+                <input type="text" placeholder=" " id="codigoDaTurma">
+                <label for="text">Código</label>
+            </div>
+
+            <div class="teste">
+                <input type="text" placeholder=" " id="nomeDaTurma">
+                <label for="text">teste</label>
+            </div>
+
+            <div class="periodoDaTurma">
+                <select id="quantTurmas" name="quantTurmas" placeholder=" ">
+                    <option value="1">1° Semestre</option>
+                    <option value="2">2° Semestre</option>
+                    <option value="3">3° Semestre</option>
+                    <option value="4">4° Semestre</option>
+                    <option value="5">5° Semestre</option>
+                    <option value="6">6° Semestre</option>
+                    <option value="7">7° Semestre</option>
+                    <option value="8">8° Semestre</option>
+                    <option value="9">9° Semestre</option>
+                    <option value="10">10° Semestre</option>
+                </select>
+                <label for="quantTurmas">Periodo do curso</label>
+            </div>
+
+            <div class="buttonCreate">
+                <button>Salvar diciplina</button>
+            </div>
+            <!--
+            <div class="turmas">
+                <select id="quantTurmas" name="quantTurmas" placeholder=" ">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <label for="quantTurmas">Quantidade de turmas</label>
+            </div>
+            -->
+        </div>
+        <div class="closedCreate">
+            <div class="alertClosed">
+                <h1>! ALERTA !</h1>
+                <p>Você tem certeza que deseja descartar todas as alterações?</p>
+                <div class="buttonAlert">
+                    <button class="bntYes">sim</button>
+                    <button class="bntNo">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
@@ -24,5 +87,7 @@
             loadComponent("header", "../components/header.html");
         });
     </script>
+
+    <script src="../scripts/program.js" defer></script>
 </body>
 </html>
