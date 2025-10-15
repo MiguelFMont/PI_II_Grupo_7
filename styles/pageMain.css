@@ -13,6 +13,7 @@
     --white: #ffffff;
     --grey: #808080;
     --shadow: rgba(0, 0, 0, 0.2);
+    --color5shadow: rgba(255, 178, 25, 0.2);
     --color6Shadow: rgba(97, 92, 92, 0.5);
 
     --color1: #ebe8e8;   /* Fundo principal (claro) */
@@ -309,6 +310,7 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    z-index: 1000;
 }
 
 .createBody.active {
@@ -342,7 +344,7 @@ body {
     cursor: pointer;
 }
 
-.nameClass, .codeClass, .teste, .periodoDaTurma, .turmas {
+.nameClass, .codeClass, .teste, .periodoDaTurma {
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -359,7 +361,7 @@ body {
     position: relative;
 }
 
-.nameClass input, .codeClass input, .teste input, .periodoDaTurma select, .turmas select {
+.nameClass input, .codeClass input, .teste input, .periodoDaTurma select {
     border: none;
     border-radius: 8px;
     outline: none;
@@ -371,7 +373,7 @@ body {
     caret-color: var(--color5);
 }
 
-.nameClass label, .codeClass label, .teste label, .periodoDaTurma label, .turmas label {
+.nameClass label, .codeClass label, .teste label, .periodoDaTurma label {
     position: absolute;
     z-index: 100;
     margin-left: 8px;
@@ -389,9 +391,7 @@ body {
 .teste input:focus + label,
 .teste input:not(:placeholder-shown) + label,
 .periodoDaTurma select:focus + label,
-.periodoDaTurma select:not(:placeholder-shown) + label,
-.turmas select:focus + label,
-.turmas select:not(:placeholder-shown) + label {
+.periodoDaTurma select:not(:placeholder-shown) + label {
     position: absolute;
     z-index: 100;
     margin-bottom: 50px;
@@ -409,9 +409,7 @@ body {
 .teste:has(input:focus),
 .teste:has(input:not(:placeholder-shown)),
 .periodoDaTurma:has(select:focus),
-.periodoDaTurma:has(select:not(:placeholder-shown)),
-.turmas:has(select:focus),
-.turmas:has(select:not(:placeholder-shown)) {
+.periodoDaTurma:has(select:not(:placeholder-shown)) {
     border: 1px solid var(--color5);
 }
 
@@ -508,4 +506,180 @@ body {
 .bntNo:hover {
     background: var(--color5Hover);
     cursor: pointer;
+}
+
+/* ANIMAÇÕES */
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+.createBody,
+.closedCreate {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.createBody.active,
+.closedCreate.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    visibility: visible;
+    animation: popIn 0.18s ease-out;
+}
+
+.createBody.closing,
+.closedCreate.closing {
+    animation: popOut 0.15s ease-in forwards;
+}
+
+.bodyWithDicipline {
+    height: 100%;
+    width: 100%;
+    padding: 100px 100px 100px 120px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    border: 1px solid green;
+}
+
+.dicipline {
+    cursor: pointer;
+    height: 200px;
+    width: 280px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px var(--shadow);
+}
+
+.imgDicipline {
+    height: 120px;
+    width: 280px;
+}
+
+.imgDicipline h1 {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: var(--white);
+}
+
+.imgDicipline:hover h1 {
+    text-decoration: underline;
+}
+
+.imgDicipline i {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-top: 10px;
+    margin-left: 250px;
+    border-radius: 50%;
+}
+
+.imgDicipline i:hover {
+    background: var(--shadow);
+}
+
+.imgDicipline img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.codeDicipline {
+    padding-left: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color6);
+}
+
+.codeDicipline:hover {
+    text-decoration: underline;
+}
+
+.contentDicipline {
+    height: 35px;
+    width: 280px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.contentDicipline i {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.contentDicipline i:hover {
+    background: var(--shadow);
+}
+
+.plusDicipline {
+    height: 200px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px var(--shadow);
+    cursor: pointer;
+}
+
+.boderPlus {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--color5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--color5);
+}
+
+.plusDicipline:hover .boderPlus {
+    background: var(--color5shadow);
+}
+
+.plusDicipline:active {
+    background: var(--white);
+}
+
+.dicipline, .plusDicipline {
+    flex: 1 1 calc( - 20px);
+    max-width: calc( - 20px);
+    box-sizing: border-box;
 }

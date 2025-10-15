@@ -41,6 +41,7 @@
 
             <div class="periodoDaTurma">
                 <select id="quantTurmas" name="quantTurmas" placeholder=" ">
+                    <option value="0">Selecionar</option>
                     <option value="1">1° Semestre</option>
                     <option value="2">2° Semestre</option>
                     <option value="3">3° Semestre</option>
@@ -56,29 +57,41 @@
             </div>
 
             <div class="buttonCreate">
-                <button>Salvar diciplina</button>
+                <button id="saveDicipline">Salvar diciplina</button>
             </div>
-            <!--
-            <div class="turmas">
-                <select id="quantTurmas" name="quantTurmas" placeholder=" ">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <label for="quantTurmas">Quantidade de turmas</label>
-            </div>
-            -->
         </div>
         <div class="closedCreate">
             <div class="alertClosed">
                 <h1>! ALERTA !</h1>
-                <p>Você tem certeza que deseja descartar todas as alterações?</p>
+                <p>Tem certeza que deseja descartar todas as alterações?</p>
                 <div class="buttonAlert">
                     <button class="bntYes">sim</button>
                     <button class="bntNo">Cancelar</button>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodyWithDicipline">
+        <div class="dicipline">
+            <div class="imgDicipline">
+                <h1>Nome da diciplina</h1>
+                <i class="ph ph-dots-three-vertical"></i>
+                <img src="../assets/diciplina/um.png" alt="">
+            </div>
+            <div class="codeDicipline">
+                <p id="codeDiciplineCard">1234</p>
+                <p>-</p>
+                <p id="nameDiciplineCard">Nome da diciplina</p>
+            </div>
+            <div class="contentDicipline">
+                <i class="ph ph-pencil-simple"></i>
+                <i class="ph ph-note-pencil"></i>
+                <i class="ph ph-folder"></i>
+            </div>
+        </div>
+        <div class="plusDicipline">
+            <div class="boderPlus">
+                <i class="ph ph-plus"></i>
             </div>
         </div>
     </div>
