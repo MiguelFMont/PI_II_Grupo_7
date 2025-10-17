@@ -155,10 +155,11 @@ input {
 }
 
 .optionsHeader {
+    margin: 13.5px 0 0 0;
     position: absolute;
     top: 100%;
     right: 0;
-    width: 150px;
+    width: 127px;
     background: var(--white);
     box-shadow: -4px 4px 8px var(--shadow);
     border-bottom-left-radius: 8px;
