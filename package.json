@@ -4,7 +4,9 @@
   "description": "Pacote dedicado ao Projeto Integrador II, grupo 7 da PUC-Campinas.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "verify": "ts-node src/verify.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,25 @@
     "@phosphor-icons/web": "^2.1.2",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mysql2": "^3.15.2",
+    "oracledb": "^6.10.0",
     "path": "^0.12.7"
   },
   "bugs": {
     "url": "https://github.com/MiguelFMont/PI_II_Grupo_7/issues"
   },
-  "homepage": "https://github.com/MiguelFMont/PI_II_Grupo_7#readme"
+  "homepage": "https://github.com/MiguelFMont/PI_II_Grupo_7#readme",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.8.1",
+    "@types/oracledb": "^6.9.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
 }
