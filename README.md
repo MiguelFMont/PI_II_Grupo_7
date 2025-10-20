@@ -2,7 +2,7 @@
 
 ![App Banner](./assets/logoComIcone.png)
 
-Um **aplicativo universitário para professores**, que facilita a gestão de matérias, notas, trabalhos e tarefas, tornando o ensino mais organizado e eficiente.
+Um **aplicativo universitário para professores**, que facilita a gestão de matérias, notas, trabalhos e tarefas, tornando o ensino mais organizado e eficiente
 
 ---
 
