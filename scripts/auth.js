@@ -97,6 +97,13 @@ if (botaoLogin) {
         if (usuario) {
             errorMessage.style.display = "none";
             erroAtivo = false;
+
+            // 🟢 Salva nome e email do usuário logado
+            localStorage.setItem("usuarioLogado", JSON.stringify({
+                nome: usuario.nome,
+                email: usuario.email
+            }));
+
             window.location.href = "pages/mainPage.html";
         } else {
             marcarErroCampo(inputEmail, originalLabels.email);

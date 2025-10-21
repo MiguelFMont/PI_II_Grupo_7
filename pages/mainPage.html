@@ -17,17 +17,33 @@
 </head>
 
 <body>
-    <div class="content">
-        <div class="searchContent">
+    <div class="sideBar">
+        <div class="header">
+            <div class="logo">
+                <img src="../assets/logo32x32.png" alt="">
+                <div class="titleLogo">
+                    <h1>NotaDez</h1>
+                    <p>Sistema de Gestão de Notas</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
             <ul>
+                <h2>NAVEGAÇÃO</h2>
                 <li>
                     <a href="#">
-                        <i class="ph ph-speedometer" class="iconsSeacrchContent"></i>
-                        <p>Painel de controle</p>
+                        <i class="ph ph-house" class="iconsSeacrchContent"></i>
+                        <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="btnTurma">
+                    <a href="#">
+                        <i class="ph ph-buildings" class="iconsSeacrchContent"></i>
+                        <p>Instituições</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
                         <i class="ph ph-book-open" class="iconsSeacrchContent"></i>
                         <p>Diciplinas</p>
                     </a>
@@ -35,78 +51,44 @@
                 <li>
                     <a href="#">
                         <i class="ph ph-users" class="iconsSeacrchContent"></i>
-                        <p>Grupos</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="ph ph-calendar-dots" class="iconsSeacrchContent"></i>
-                        <p>Calendário</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="ph ph-envelope-open" class="iconsSeacrchContent"></i>
-                        <p>Mensagens</p>
+                        <p>Turmas</p>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="contentMain">
-            <div class="pageTitle">
-            </div>
-            <div id="turma"></div>
-            <div class="dicipline">
-            <div class="imgDicipline">
-                <h1>Nome da diciplina</h1>
-                <i class="ph ph-dots-three-vertical"></i>
-                <img src="../assets/diciplina/um.png" alt="">
-            </div>
-            <div class="codeDicipline">
-                <p id="codeDiciplineCard">1234</p>
-                <p>-</p>
-                <p id="nameDiciplineCard">Nome da diciplina</p>
-            </div>
-            <div class="contentDicipline">
-                <i class="ph ph-pencil-simple"></i>
-                <i class="ph ph-note-pencil"></i>
-                <i class="ph ph-folder"></i>
+        <div class="footer">
+            <div class="loginUser">
+                <i class="ph ph-user"></i>
+                <div class="titleUser">
+                    <div class="loginUserNamebnt">
+                        <h1></h1>
+                        <button id="logoutBtn">Sair</button>
+                    </div>
+                    <p></p>
+                </div>
             </div>
         </div>
-        </div>
     </div>
-    <div class="footer">
-
-    </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const btnTurma = document.getElementById("btnTurma");
-    const turmaDiv = document.getElementById("turma");
-
-    btnTurma.addEventListener("click", async (event) => {
-        event.preventDefault(); // impede redirecionamento
-
-        try {
-            const response = await fetch("../pages/turma.html");
-            if (!response.ok) throw new Error("Erro ao carregar turma.html");
-
-            const html = await response.text();
-
-            // injeta o conteúdo do HTML dentro da div
-            turmaDiv.innerHTML = html;
-
-            // executa o script program.js depois do conteúdo estar no DOM
-            const script = document.createElement("script");
-            script.src = "../scripts/program.js";
-            script.defer = true;
-            document.body.appendChild(script);
-        } catch (error) {
-            turmaDiv.innerHTML = "<p>Erro ao carregar conteúdo.</p>";
-            console.error(error);
-        }
-    });
-});
-</script>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (usuario) {
+        document.querySelector(".titleUser h1").textContent = usuario.nome;
+        document.querySelector(".titleUser p").textContent = usuario.email;
+    } else {
+        window.location.href = "../index.html";
+        return;
+    }
+
+    const logoutBtn = document.querySelector("#logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogado");
+            window.location.href = "../index.html";
+        });
+    }
+    });
+</script>
 </html>
