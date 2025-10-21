@@ -14,11 +14,9 @@
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-    <script src="../scripts/include.js" defer></script>
 </head>
 
 <body>
-    <div id="header"></div>
     <div class="content">
         <div class="searchContent">
             <ul>
@@ -29,9 +27,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="ph ph-book-bookmark" class="iconsSeacrchContent"></i>
-                        <p>Cursos</p>
+                    <a href="#" id="btnTurma">
+                        <i class="ph ph-book-open" class="iconsSeacrchContent"></i>
+                        <p>Diciplinas</p>
                     </a>
                 </li>
                 <li>
@@ -56,8 +54,8 @@
         </div>
         <div class="contentMain">
             <div class="pageTitle">
-                <h1>PAINEL DE CONTROLE</h1>
             </div>
+            <div id="turma"></div>
             <div class="dicipline">
             <div class="imgDicipline">
                 <h1>Nome da diciplina</h1>
@@ -81,10 +79,34 @@
 
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            loadComponent("header", "../components/header.html");
-        });
-    </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btnTurma = document.getElementById("btnTurma");
+    const turmaDiv = document.getElementById("turma");
+
+    btnTurma.addEventListener("click", async (event) => {
+        event.preventDefault(); // impede redirecionamento
+
+        try {
+            const response = await fetch("../pages/turma.html");
+            if (!response.ok) throw new Error("Erro ao carregar turma.html");
+
+            const html = await response.text();
+
+            // injeta o conteúdo do HTML dentro da div
+            turmaDiv.innerHTML = html;
+
+            // executa o script program.js depois do conteúdo estar no DOM
+            const script = document.createElement("script");
+            script.src = "../scripts/program.js";
+            script.defer = true;
+            document.body.appendChild(script);
+        } catch (error) {
+            turmaDiv.innerHTML = "<p>Erro ao carregar conteúdo.</p>";
+            console.error(error);
+        }
+    });
+});
+</script>
 </body>
 </html>

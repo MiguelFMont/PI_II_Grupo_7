@@ -37,7 +37,6 @@ body {
 }
 
 .content {
-    margin-top: 140px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,10 +46,9 @@ body {
 
 .searchContent {
     width: 4vw;
-    height: 100%;
+    height: 100vh;
     background: var(--grey);
     position: fixed;
-    top: 65px;
     left: 0;
     border-right: 2px solid var(--color5);
 }
@@ -463,7 +461,6 @@ body {
 .bodyWithDicipline {
     height: 100%;
     width: 100%;
-    padding: 100px 100px 100px 120px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
@@ -588,4 +585,15 @@ body {
     flex: 1 1 calc( - 20px);
     max-width: calc( - 20px);
     box-sizing: border-box;
+}
+
+/*PAGES CSS*/
+
+#turma {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
