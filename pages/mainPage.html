@@ -69,26 +69,12 @@
             </div>
         </div>
     </div>
+    <div class="pagesContent">
+        <div class="dashboard"></div>
+        <div class="instituições"></div>
+        <div class="diciplinas"></div>
+        <div class="turmas"></div>
+    </div>
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
-
-    if (usuario) {
-        document.querySelector(".titleUser h1").textContent = usuario.nome;
-        document.querySelector(".titleUser p").textContent = usuario.email;
-    } else {
-        window.location.href = "../index.html";
-        return;
-    }
-
-    const logoutBtn = document.querySelector("#logoutBtn");
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("usuarioLogado");
-            window.location.href = "../index.html";
-        });
-    }
-    });
-</script>
+<script src="../scripts/main.js"></script>
 </html>

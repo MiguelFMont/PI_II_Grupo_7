@@ -141,17 +141,17 @@ body {
     border-radius: 10px;
 }
 
-.content ul li a:focus {
+.content ul li a.ativo {
     color: var(--white);
     background: linear-gradient(145deg, var(--color5), var(--color4));
     box-shadow: 0 5px 10px var(--shadow);
 }
 
-.content ul li a:focus:hover {
+.content ul li a.ativo:hover {
     background: linear-gradient(145deg, var(--color5Hover), var(--color4));
 }
 
-.content ul li a:focus p {
+.content ul li a.ativo p {
     color: var(--white);
     font-weight: 600;
 }
@@ -244,4 +244,91 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.pagesContent {
+    height: 100%;
+    width: 100%;
+    margin-left: 17vw;
+    padding: 30px;
+}
+
+/*////////////////////////////////////////////////
+                DASHBOARD STYLE
+////////////////////////////////////////////////*/
+.titleDashboard h1 {
+    font-size: 2.4rem;
+}
+
+.titleDashboard p {
+    font-size: 1rem;
+    color: var(--color6);
+}
+
+.optionDashboard {
+    padding: 25px 0;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    gap: 25px;
+}
+
+.itensOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 10px 15px -3px var(--shadow);
+    transition: all 0.1s ease;
+}
+
+.itensOption:hover {
+    transform: scale(1.04);
+}
+
+.titleOptionDashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titleOptionDashboard h2 {
+    font-size: 0.9rem;
+    color: var(--color6);
+}
+
+.titleOptionDashboard p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.logoOptions {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 12px;
+    background: var(--color5shadow);
+}
+
+.logoOptions i {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background: var(--color5shadow);
+    color: var(--color5);
+    border-radius: 8px;
 }
