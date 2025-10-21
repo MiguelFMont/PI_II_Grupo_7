@@ -153,7 +153,6 @@ body {
 /* ================================================
     DASHBOARD CARDS
    ================================================ */
-/*
 .pageTitle {
     height: min-content;
     width: 100%;
@@ -167,106 +166,13 @@ body {
     color: var(--color6);
 }
 
-
-.dashboardCard {
-    height: 250px;
-    width: 280px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px var(--shadow);
-    cursor: pointer ;
+.contentMain .dicipline {
+    display: none;
 }
 
-.dashboardCard:hover {
-    box-shadow: 0 4px 8px var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.imageCard {
-    height: 60%;
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-image: url(../assets/exemploTeste.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-//
-.imageCard::after {
-    display: block;
-    height: 100%;
-    width: 100%;
-    content: "";
-    background-color: var(--color3);
-    opacity: 0.6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-//
-
-.contentCard {
-    height: 40%;
-    width: 100%;
-    background: var(--white);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 8px 25px;
-}
-
-.titleCard {
-    display: flex;
-    align-items: center;
-}
-
-.idCard {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color6);
-}
-
-.spaceCard {
-    background: var(--color6);
-    height: 2px;
-    width: 6px;
-    margin: 0px 4px;
-    border-radius: 26px;
-}
-
-.nameCard {
-    font-size: 1rem;
-    color: var(--color6);
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.descriptionCard {
-    font-size: 0.9rem;
-    color: var(--color6);
-    margin-top: -15px;
-    font-weight: 500;
-}
-
-.itensCard ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-}
-
-.itensCard ul li {
-    color: var(--color6);
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-.itensCard ul li:hover {
-    color: var(--color5);
-}
-
-*/
+/* ================================================
+    CRIAR DICIPLINA
+   ================================================ */
 
 .desingTurmas {
     height: 300px;
