@@ -13,6 +13,8 @@
     --white: #ffffff;
     --grey: #808080;
 
+    --shadow: rgba(0, 0, 0, 0.2);
+
     --color1: #ebe8e8;   /* Fundo principal (claro) */
     --color2: #e8e8e8;   /* Fundo secundário */
     --color3: #e30075;   /* Cor escura para textos */
@@ -42,6 +44,18 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--color6);
+}
+
+#cadastro {
+    border-bottom-left-radius: 150px;
+    border-top-left-radius: 150px;
+    box-shadow: -10px 10px 10px 10px  var(--shadow);
+}
+
+#login {
+    border-bottom-right-radius: 150px;
+    border-top-right-radius: 150px;
+    box-shadow: 10px 10px 10px 10px  var(--shadow);
 }
 
 .containerMonster {
@@ -170,6 +184,20 @@ body {
 .eye.closed .pupil {
     opacity: 0;
     transform: scale(0.5);
+}
+
+#cadastro .monsterTwo .eyeContainer .eye.look-right:nth-child(2) {
+    margin-right: 100px;
+}
+
+#cadastro .monsterThree .eyeContainer .eye.look-right:nth-child(2) {
+    margin-right: 100px;
+}
+
+#cadastro .monsterOne .eye.eye.look-right {
+    margin-right: 140px;
+    height: 25px;
+    width: 30px;
 }
 
 .eye.look-right {

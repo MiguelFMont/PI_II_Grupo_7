@@ -12,9 +12,13 @@
     --black: #000000;
     --white: #ffffff;
     --grey: #808080;
+    
     --shadow: rgba(0, 0, 0, 0.2);
+    --color3Shadow: rgb(227, 0, 117, 0.2);
+    --color4Shadow: rgb(255, 74, 74, 0.2);
     --color5shadow: rgba(255, 178, 25, 0.2);
     --color6Shadow: rgba(97, 92, 92, 0.5);
+    --color7Shadow: rgb(183, 6, 228, 0.2);
 
     --color1: #ebe8e8;   /* Fundo principal (claro) */
     --color2: #e8e8e8;   /* Fundo secundário */
@@ -23,8 +27,10 @@
     --color5: #ffb319;   /* Amarelo (hover de botões) */
     --color5Hover: #e39e13; /* Amarelo escuro (hover de botões) */
     --color6: #615c5c;   /* cinza (hover alternativo de botões) */
+    --color7: #b706e4;
 
     --lightgrey: #d3d3d3; /* Bordas e separadores suaves */
+
 }
 
 body {
@@ -67,7 +73,9 @@ body {
 .logo img {
     height: 40px;
     width: 40px;
+    background: var(--color5);
     border-radius: 8px;
+    box-shadow: 2px 2px 5px var(--shadow);
 }
 
 .titleLogo h1 {
@@ -208,16 +216,18 @@ body {
     height: 20px;
     width: 45px;
     border-radius: 5px;
-    background: var(--color1);
+    background: var(--color4);
     border: none;
     font-size: 0.7rem;
-    font-weight: 500;
-    box-shadow: 0 2px 6px var(--color6Shadow);
+    font-weight: 600;
+    box-shadow: 0 2px 5px var(--color6Shadow);
     cursor: pointer;
+    color: var(--black);
     transition: all 0.2s ease;
 }
 
 .loginUser button:hover {
+    transform: scale(1.01);
     box-shadow: 0 5px 8px var(--color6Shadow);
 }
 
@@ -331,4 +341,33 @@ body {
     background: var(--color5shadow);
     color: var(--color5);
     border-radius: 8px;
+}
+
+#diciplinas .logoOptions,
+#diciplinas .logoOptions i {
+    background: var(--color4Shadow);
+    color: var(--color4);
+}
+
+#turmas .logoOptions,
+#turmas .logoOptions i {
+    background: var(--color3Shadow);
+    color: var(--color3);
+}
+
+#alunos .logoOptions,
+#alunos .logoOptions i {
+    background: var(--color7Shadow);
+    color: var(--color7);
+}
+
+.viewTurmaInstituicao {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color6);
+    border-radius: 12px;
 }
