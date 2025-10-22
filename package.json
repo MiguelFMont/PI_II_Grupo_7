@@ -1,5 +1,5 @@
 {
-  "name": "pi_ii_grupo_7",
+  "name": "ES_PI2_2025_T1_G07",
   "version": "1.0.0",
   "description": "Pacote dedicado ao Projeto Integrador II, grupo 7 da PUC-Campinas.",
   "main": "server.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MiguelFMont/PI_II_Grupo_7.git"
+    "url": "git+https://github.com/MiguelFMont/ES_PI2_2025_T1_G07.git"
   },
   "keywords": [
     "node",
@@ -29,9 +29,9 @@
     "path": "^0.12.7"
   },
   "bugs": {
-    "url": "https://github.com/MiguelFMont/PI_II_Grupo_7/issues"
+    "url": "https://github.com/MiguelFMont/ES_PI2_2025_T1_G07/issues"
   },
-  "homepage": "https://github.com/MiguelFMont/PI_II_Grupo_7#readme",
+  "homepage": "https://github.com/MiguelFMont/ES_PI2_2025_T1_G07#readme",
   "devDependencies": {
     "@types/body-parser": "^1.19.6",
     "@types/cors": "^2.8.19",
