@@ -149,4 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- AO INICIAR: CARREGAR "DASHBOARD" ---
     carregarPagina("dashboard");
+
+    document.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if (!link) return;
+
+        const texto = link.textContent.toLowerCase();
+
+        if (texto.includes("cadastrar instituição") || link.id === "instituicoes") {
+            e.preventDefault();
+            carregarPagina("instituições");
+        }
+    });
 });
