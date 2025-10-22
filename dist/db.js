@@ -7,7 +7,7 @@ const oracledb_1 = __importDefault(require("oracledb"));
 async function connectToOracle() {
     try {
         // Configurações da Wallet
-        oracledb_1.default.initOracleClient({ libDir: "C:\\oracle\\instantclient_21_13" }); // ajuste o caminho se usar Instant Client
+        oracledb_1.default.initOracleClient({ libDir: "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\Nova pasta (2)" }); // ajuste o caminho se usar Instant Client
         const connection = await oracledb_1.default.getConnection({
             user: "ADMIN", // seu usuário Oracle
             password: "1Quatroooooooooooooooooo", // senha do banco

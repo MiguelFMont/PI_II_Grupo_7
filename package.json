@@ -2,11 +2,11 @@
   "name": "pi_ii_grupo_7",
   "version": "1.0.0",
   "description": "Pacote dedicado ao Projeto Integrador II, grupo 7 da PUC-Campinas.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "verify": "ts-node src/verify.ts",
     "build": "tsc",
-    "start": "npm run build && node dist/server.js && node dist/db.js"
+    "start": "npm run build && node dist/server.js"
   },
   "repository": {
     "type": "git",
