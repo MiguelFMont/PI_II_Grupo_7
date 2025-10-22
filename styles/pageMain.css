@@ -12,8 +12,9 @@
     --black: #000000;
     --white: #ffffff;
     --grey: #808080;
+    --greyBorder: #c3c3c3;
     
-    --shadow: rgba(0, 0, 0, 0.2);
+    --shadow: rgba(0, 0, 0, 0.1);
     --color3Shadow: rgb(227, 0, 117, 0.2);
     --color4Shadow: rgb(255, 74, 74, 0.2);
     --color5shadow: rgba(255, 178, 25, 0.2);
@@ -271,7 +272,7 @@ body {
 }
 
 .titleDashboard p {
-    font-size: 1rem;
+    font-size: 0.965rem;
     color: var(--color6);
 }
 
@@ -368,7 +369,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--color6);
+    border: 1px solid var(--greyBorder);
     border-radius: 12px;
     gap: 30px;
 }
@@ -431,4 +432,60 @@ body {
     width: 20px;
     border-radius: 0;
     font-size: 1.5rem;
+}
+
+/*////////////////////////////////////////////////
+                INSTITUIÇÕES STYLE
+////////////////////////////////////////////////*/
+.headerInstituicao {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.iconAndTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.iconAndTitle i {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--color5);
+}
+
+.titleInstituicoes h1 {
+    font-size: 2rem;
+}
+
+.titleInstituicoes p {
+    font-size: 0.965rem;
+    color: var(--color6);
+}
+
+.headerInstituicao button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.970rem;
+    font-weight: 500;
+    color: var(--white);
+    background: linear-gradient(145deg, var(--color5), var(--color4));
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.headerInstituicao button:hover {
+    background: linear-gradient(145deg, var(--color5Hover), var(--color4));
 }
