@@ -6,7 +6,7 @@
   "scripts": {
     "verify": "ts-node src/verify.ts",
     "build": "tsc",
-    "start": "npm run build && node dist/server.js"
+    "start": "npm run build && node dist/server.js && node dist/db.js"
   },
   "repository": {
     "type": "git",

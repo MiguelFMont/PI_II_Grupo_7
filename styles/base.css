@@ -172,6 +172,15 @@ body {
     transition: transform 0.1s ease-out;
 }
 
+#cadastro .eye.closed {
+    margin-right: -30px;
+}
+
+#cadastro .monsterTwo .eye.closed:nth-child(2),
+#cadastro .monsterThree .eye.closed:nth-child(2) {
+    margin-left: 50px;
+}
+
 .eye.closed {
     height: 10px;
     background: black;
@@ -187,27 +196,39 @@ body {
 }
 
 #cadastro .monsterTwo .eyeContainer .eye.look-right:nth-child(2) {
-    margin-right: 100px;
+    height: 20px;
+    margin-left: 10px;
 }
 
 #cadastro .monsterThree .eyeContainer .eye.look-right:nth-child(2) {
-    margin-right: 100px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#cadastro .monsterTwo .eyeContainer .eye.look-right,
+#cadastro .monsterThree .eyeContainer .eye.look-right {
+    margin-left: -20px;
 }
 
 #cadastro .monsterOne .eye.eye.look-right {
-    margin-right: 140px;
-    height: 25px;
+    margin-right: 40px;
+    height: 20px;
     width: 30px;
 }
 
 .eye.look-right {
-    margin-left : 50px;
+    height: 20px;
+    margin-left : 20px;
 }
 
 .monsterOne .eye.look-right {
-    height: 25px;
+    height: 20px;
     width: 30px;
-    margin-left: 70px;
+    margin-left: 20px;
+}
+
+#cadastro .mouth.closed {
+    margin-left: 40px;
 }
 
 .mouth.closed {
