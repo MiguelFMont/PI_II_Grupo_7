@@ -1,7 +1,7 @@
 {
-  "name": "ES_PI2_2025_T1_G07",
+  "name": "es-pi2-2025-t1-g07",
   "version": "1.0.0",
-  "description": "Pacote dedicado ao Projeto Integrador II, grupo 7 da PUC-Campinas.",
+  "description": "Pacote dedicado ao Projeto Integrador II, grupo 7, turma 1 da PUC-Campinas.",
   "main": "server.js",
   "scripts": {
     "verify": "ts-node src/verify.ts",

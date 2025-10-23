@@ -15,7 +15,7 @@ app.listen(3000, () => console.log("🚀 Servidor rodando em http://localhost:30
 app.get("/", (req: Request, res: Response) => {
     res.send("Rota default. Server port: 3000");
 });
-
+    
 // rota de ping/pong (teste de requisicao)
 app.post("/printRequest", (req: Request, res: Response) => {
     const dadosRecebidos = req.body;
@@ -28,3 +28,4 @@ app.post("/printRequest", (req: Request, res: Response) => {
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
+
