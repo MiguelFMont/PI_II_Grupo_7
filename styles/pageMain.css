@@ -441,14 +441,26 @@ body {
 /*////////////////////////////////////////////////
                 INSTITUIÇÕES STYLE
 ////////////////////////////////////////////////*/
-.headerInstituicao {
+.idtBody {
+    padding: 0 2vw;
+}
+
+.headerIdt {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2vw;
     margin-bottom: 35px;
+}
+
+.titleIdt h1 {
+    font-size: 2rem;
+}
+
+.titleIdt p {
+    font-size: 0.965rem;
+    color: var(--color6);
 }
 
 .iconAndTitle {
@@ -463,19 +475,21 @@ body {
 .iconAndTitle i {
     font-size: 2.4rem;
     font-weight: 500;
+}
+
+#instituicoesBody .iconAndTitle i {
     color: var(--color5);
 }
 
-.titleInstituicoes h1 {
-    font-size: 2rem;
+#diciplinasBody .iconAndTitle i {
+    color: var(--color4);
 }
 
-.titleInstituicoes p {
-    font-size: 0.965rem;
-    color: var(--color6);
+#turmasBody .iconAndTitle i {
+    color: var(--color3);
 }
 
-.headerInstituicao button {
+.headerIdt button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -486,16 +500,27 @@ body {
     font-size: 0.970rem;
     font-weight: 500;
     color: var(--white);
-    background: linear-gradient(145deg, var(--color5), var(--color4));
     cursor: pointer;
     box-shadow: 0 4px 8px var(--shadow);
 }
 
-.headerInstituicao button:hover {
+#instituicoesBody .headerIdt button {
+    background: linear-gradient(145deg, var(--color5), var(--color4));
+}
+
+#diciplinasBody .headerIdt button {
+    background: linear-gradient(145deg, var(--color4), var(--color3));
+}
+
+#turmasBody .headerIdt button {
+    background: linear-gradient(145deg, var(--color3), var(--color7));
+}
+
+.headerIdt button:hover {
     background: linear-gradient(145deg, var(--color5Hover), var(--color4));
 }
 
-.cardInstituicao {
+.cardIdt {
     height: 250px;
     width: 100%;
     display: flex;
@@ -505,26 +530,37 @@ body {
     border: 1px solid var(--greyBorder);
     border-radius: 12px;
     gap: 15px;
-    background: var(--whit);
+    background: var(--white);
 }
 
-.cardInstituicao h3 {
+.cardIdt h3 {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--black);
 }
 
-.cardInstituicao p {
+.cardIdt p {
     font-size: 1rem;
     font-weight: 400;
     color: var(--color6);
 }
 
-.cardInstituicao i {
+.cardIdt i {
     display: flex;
     justify-content: center;
     align-items: center;border-radius: 50%;
     font-size: 3rem;
     font-weight: 500;
+}
+
+#instituicoesBody .cardIdt i {
     color: var(--color5);
+}
+
+#diciplinasBody .cardIdt i {
+    color: var(--color4);
+}
+
+#turmasBody .cardIdt i {
+    color: var(--color3);
 }
