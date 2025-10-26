@@ -1,0 +1,157 @@
+/* ================================================
+    RESET GERAL E VARIÁVEIS DE CORES
+   ================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores principal usada no projeto */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #808080;
+
+    --shadow: rgba(0, 0, 0, 0.2);
+
+    --color1: #ebe8e8;
+    /* Fundo principal (claro) */
+    --color2: #e8e8e8;
+    /* Fundo secundário */
+    --color3: #e30075;
+    /* Cor escura para textos */
+    --color4: #ff4a4a;
+    /* Vermelho (erros ou alertas) */
+    --color5: #ffb319;
+    /* Amarelo (hover de botões) */
+    --color6: #615c5c;
+    /* cinza (hover alternativo de botões) */
+
+    --lightgrey: #d3d3d3;
+    /* Bordas e separadores suaves */
+}
+
+/* ================================================
+    CONFIGURAÇÃO DO BODY
+   ================================================ */
+body {
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color1);
+    padding: 20px;
+}
+
+/* ================================================
+    CONTAINER PRINCIPAL (ÁREA CENTRAL)
+   ================================================ */
+
+.logo-container {
+    margin-bottom: 60px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.title h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.code-input-wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+#code {
+    width: 100%;
+    height: 60px;
+    border: 2px solid var(--lightgrey);
+    border-radius: 50px;
+    padding: 0 24px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 6px;
+    transition: all 0.3s ease;
+    background: var(--color1);
+    color: var(--black);
+    outline: none;
+    box-shadow: none;
+}
+
+#code:focus {
+    border-color: var(--color5);
+    box-shadow: none;
+}
+
+#code::placeholder {
+    letter-spacing: normal;
+    color: var(--lightgrey);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#code::-webkit-inner-spin-button,
+#code::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.verify-button {
+    width: 100%;
+    max-width: 500px;
+    height: 56px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: none;
+}
+
+.verify-button:hover {
+    background: var(--color5);
+    color: var(--black);
+}
+
+.verify-button:active {
+    transform: scale(0.98);
+}
+
+.verify-button:focus {
+    outline: none;
+    background: var(--color5);
+    color: var(--black);
+}
+
+@media (max-width: 600px) {
+    .logo {
+        max-width: 160px;
+    }
+
+    .title h2 {
+        font-size: 1.6rem;
+    }
+
+    #code {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+    }
+}
