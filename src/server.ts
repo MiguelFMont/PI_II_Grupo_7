@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import { request } from "http";
 import cors from "cors";
 import path from "path";
+import { Resend } from "resend";
 
 import {
     getAllEstudantes,

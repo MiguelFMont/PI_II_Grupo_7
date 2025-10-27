@@ -26,7 +26,8 @@
     "express": "^5.1.0",
     "mysql2": "^3.15.2",
     "oracledb": "^6.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "resend": "^6.3.0"
   },
   "bugs": {
     "url": "https://github.com/MiguelFMont/ES_PI2_2025_T1_G07/issues"
