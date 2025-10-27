@@ -36,122 +36,144 @@
     CONFIGURAÇÃO DO BODY
    ================================================ */
 body {
-    font-family: "Roboto", sans-serif;
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%); */
+    background-color: var(--color1);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--color1);
+    min-height: 100vh;
     padding: 20px;
 }
 
-/* ================================================
-    CONTAINER PRINCIPAL (ÁREA CENTRAL)
-   ================================================ */
-
-.logo-container {
-    margin-bottom: 60px;
+.modal {
+    /* background: white; */
+    border: none;
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 480px;
+    width: 100%;
+    /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); */
+    position: relative;
 }
-
-.logo {
-    max-width: 200px;
-    height: auto;
-}
-
 .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Ícone ou logotipo rotacionado levemente */
+.logo {
+    max-height: 180px;
+    max-width: 200px;
+    /*transform: rotate(12deg);*/
+    margin-left: -10px;
+}
+
+.password-display {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.description {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     margin-bottom: 30px;
-    text-align: center;
 }
 
-.title h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--black);
-}
-
-.code-input-wrapper {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
-}
-
-#code {
-    width: 100%;
+.code-input {
+    width: 60px;
     height: 60px;
-    border: 2px solid var(--lightgrey);
-    border-radius: 50px;
-    padding: 0 24px;
-    font-size: 1.3rem;
-    font-weight: 400;
     text-align: center;
-    letter-spacing: 6px;
-    transition: all 0.3s ease;
-    background: var(--color1);
-    color: var(--black);
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f8f8f8;
+    transition: all 0.3s;
+}
+
+.code-input:focus {
     outline: none;
-    box-shadow: none;
+    border-color: #ffb319;
+    background: white;
+    transform: scale(1.05);
 }
 
-#code:focus {
-    border-color: var(--color5);
-    box-shadow: none;
+.code-input.filled {
+    border-color: #ffb319;
+    background: white;
 }
 
-#code::placeholder {
-    letter-spacing: normal;
-    color: var(--lightgrey);
-    font-size: 1rem;
-    font-weight: 400;
+.change-email {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
 }
 
-#code::-webkit-inner-spin-button,
-#code::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.change-email a {
+    color: #333;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
-.verify-button {
+.verify-btn {
     width: 100%;
-    max-width: 500px;
-    height: 56px;
-    background: var(--black);
-    color: var(--white);
+    padding: 16px;
+    background: black;
+    color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: none;
+    transition: background-color 0.5s ease;
+    /* box-shadow: 0 10px 30px rgba(255, 179, 25, 0.3); */
 }
 
-.verify-button:hover {
-    background: var(--color5);
+.verify-btn:hover,
+.verify-btn:focus {
+    transform: translateY(-2px);
+    background-color: var(--color5);
     color: var(--black);
-}
-
-.verify-button:active {
-    transform: scale(0.98);
-}
-
-.verify-button:focus {
     outline: none;
-    background: var(--color5);
-    color: var(--black);
 }
 
-@media (max-width: 600px) {
-    .logo {
-        max-width: 160px;
-    }
+.verify-btn:active {
+    transform: translateY(0);
+}
 
-    .title h2 {
-        font-size: 1.6rem;
-    }
+.resend-code {
+    text-align: center;
+    margin-top: 20px;
+}
 
-    #code {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-    }
+.resend-code a {
+    color: #333;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
 }
