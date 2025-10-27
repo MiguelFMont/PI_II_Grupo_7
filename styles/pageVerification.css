@@ -37,7 +37,6 @@
    ================================================ */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background: linear-gradient(135deg, #e8dcc4 0%, #d4c5a9 100%); */
     background-color: var(--color1);
     display: flex;
     justify-content: center;
@@ -47,7 +46,6 @@ body {
 }
 
 .modal {
-    /* background: white; */
     border: none;
     border-radius: 20px;
     padding: 50px 40px;
@@ -73,7 +71,7 @@ body {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    background: white;
+    background: var(--white);
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 14px;
@@ -109,22 +107,22 @@ h1 {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--grey);
     border-radius: 10px;
-    background: #f8f8f8;
+    background: var(--white);
     transition: all 0.3s;
 }
 
 .code-input:focus {
     outline: none;
-    border-color: #ffb319;
-    background: white;
+    border-color: var(--color5);
+    background: var(--white);
     transform: scale(1.05);
 }
 
 .code-input.filled {
-    border-color: #ffb319;
-    background: white;
+    border-color: var(--color5);
+    background: var(--white);
 }
 
 .change-email {
@@ -136,34 +134,36 @@ h1 {
 
 .change-email a {
     color: #333;
-    text-decoration: underline;
     font-weight: 600;
+    text-decoration: none;
+}
+
+.change-email a:hover {
+    text-decoration: underline;
 }
 
 .verify-btn {
     width: 100%;
     padding: 16px;
-    background: black;
-    color: white;
+    background: var(--black);
+    color: var(--white);
     border: none;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.5s ease;
-    /* box-shadow: 0 10px 30px rgba(255, 179, 25, 0.3); */
+    transition: background-color 0.2s ease;
 }
 
 .verify-btn:hover,
 .verify-btn:focus {
-    transform: translateY(-2px);
     background-color: var(--color5);
     color: var(--black);
     outline: none;
 }
 
 .verify-btn:active {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
 
 .resend-code {
