@@ -109,20 +109,20 @@ h1 {
     font-weight: bold;
     border: 2px solid var(--grey);
     border-radius: 10px;
-    background: var(--white);
+    background: var(--color1);
     transition: all 0.3s;
 }
 
 .code-input:focus {
     outline: none;
     border-color: var(--color5);
-    background: var(--white);
+    background: var(--color1);
     transform: scale(1.05);
 }
 
 .code-input.filled {
     border-color: var(--color5);
-    background: var(--white);
+    background: var(--color1);
 }
 
 .change-email {
@@ -134,12 +134,16 @@ h1 {
 
 .change-email a {
     color: #333;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
 }
 
-.change-email a:hover {
-    text-decoration: underline;
+.change-email a:hover,
+ .change-email a:focus {
+    text-decoration: none;
+    color: var(--color5);
+    outline: none;
+    transition: color 0.2s ease;
 }
 
 .verify-btn {
@@ -152,7 +156,7 @@ h1 {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.5s ease;
 }
 
 .verify-btn:hover,
@@ -173,7 +177,15 @@ h1 {
 
 .resend-code a {
     color: #333;
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+}
+
+.resend-code a:hover,
+ .resend-code a:focus {
+    text-decoration: none;
+    color: var(--color5);
+    outline: none;
+    transition: color 0.2s ease;
 }
