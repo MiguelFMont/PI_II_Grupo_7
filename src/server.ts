@@ -4,12 +4,15 @@ import { request } from "http";
 import cors from "cors";
 import path from "path";
 import { Resend } from "resend";
+import dotenv from "dotenv";
 
 import {
     getAllEstudantes,
     getEstudanteById,
     addEstudante,
 } from "./db/estudantes";
+
+dotenv.config();
 
 const app = express();
 const port: number = 3000;
