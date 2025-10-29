@@ -86,13 +86,6 @@ h1 {
     margin-bottom: 15px;
 }
 
-.description {
-    text-align: center;
-    color: #999;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-}
 
 .code-inputs {
     display: flex;
@@ -179,7 +172,7 @@ h1 {
     color: #333;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .resend-code a:hover,

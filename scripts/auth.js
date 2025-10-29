@@ -16,35 +16,35 @@ const inputTelefone = document.querySelector("#telefone");
 
 const telefoneInput = document.getElementById('telefone');
 
-    telefoneInput.addEventListener('input', (e) => {
-      let valor = e.target.value.replace(/\D/g, ''); // só números
+// telefoneInput.addEventListener('input', (e) => {
+//     let valor = e.target.value.replace(/\D/g, ''); // só números
 
-    // Se o campo estiver vazio, não mostra nada
-    if (valor.length === 0) {
-      e.target.value = '';
-      return;
-    }
+//     // Se o campo estiver vazio, não mostra nada
+//     if (valor.length === 0) {
+//         e.target.value = '';
+//         return;
+//     }
 
-      // Remove tudo que não for número
-      valor = valor.replace(/\D/g, '');
+//     // Remove tudo que não for número
+//     valor = valor.replace(/\D/g, '');
 
-      // Aplica a máscara (99) 99999-9999 ou (99) 9999-9999
-      if (valor.length > 10) {
-        // Celular com 11 dígitos
-        valor = valor.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-      } else if (valor.length > 6) {
-        // Telefone fixo com 10 dígitos
-        valor = valor.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-      } else if (valor.length > 2) {
-        // Só DDD e começo do número
-        valor = valor.replace(/(\d{2})(\d{0,5})/, '($1) $2');
-      } else {
-        // Apenas começando a digitar o DDD
-        valor = valor.replace(/(\d*)/, '($1');
-      }
+//     // Aplica a máscara (99) 99999-9999 ou (99) 9999-9999
+//     if (valor.length > 10) {
+//         // Celular com 11 dígitos
+//         valor = valor.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+//     } else if (valor.length > 6) {
+//         // Telefone fixo com 10 dígitos
+//         valor = valor.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+//     } else if (valor.length > 2) {
+//         // Só DDD e começo do número
+//         valor = valor.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+//     } else {
+//         // Apenas começando a digitar o DDD
+//         valor = valor.replace(/(\d*)/, '($1');
+//     }
 
-      e.target.value = valor;
-    });
+//     e.target.value = valor;
+// });
 
 // --- Botões ---
 const botaoLogin = document.querySelector(".buttonLogin");
