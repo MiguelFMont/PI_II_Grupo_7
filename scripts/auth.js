@@ -1,3 +1,5 @@
+
+
 // auth.js — Login e Cadastro unificados com localStorage
 
 // --- Chave localStorage ---
@@ -190,13 +192,36 @@ if (botaoCadastro) {
             return;
         }
 
-        // cadastro válido
-        usuarios.push({ nome: nomeDigitado, email: emailDigitado, telefone: telefoneDigitado, senha: senhaDigitada });
-        salvarUsuarios();
+        // // cadastro válido
+        // usuarios.push({ nome: nomeDigitado, email: emailDigitado, telefone: telefoneDigitado, senha: senhaDigitada });
 
-        errorMessage.style.display = "none";
-        alert("Cadastro realizado com sucesso! Você será redirecionado para o login.");
-        window.location.href = "../index.html";
+
+        // salvarUsuarios();
+
+        // errorMessage.style.display = "none";
+        // alert("Cadastro realizado com sucesso! Você será redirecionado para o login.");
+        // window.location.href = "../index.html";
+
+        fetch("http://localhost:3000/enviar-codigo", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nome: nomeDigitado,
+                email: emailDigitado
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.message);
+                alert("Cadastro realizado e e-mail enviado com sucesso!");
+                // redireciona após o sucesso
+                window.location.href = "../pages/pageVerification.html";
+            })
+            .catch(err => {
+                console.error("Erro ao enviar e-mail:", err);
+                alert("Cadastro feito, mas ocorreu erro ao enviar o e-mail.");
+            });
+
     });
 }
 

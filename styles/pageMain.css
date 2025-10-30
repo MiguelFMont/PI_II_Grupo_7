@@ -632,7 +632,14 @@ body {
     height: 40px;
     width: 100%;
     padding: 10px;
+    outline: none;
 }
+
+.campIdt input:focus {
+    border: 2px solid var(--color5);
+}
+
+.campIdt
 
 .buttonsCheck {
     display: flex;
