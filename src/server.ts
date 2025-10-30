@@ -65,7 +65,7 @@ app.post("/estudante", async(req:Request, res:Response) => {
     }
 })
 
-app.listen(port, () => console.log("🚀 Servidor rodando em http://localhost:3000"));
+app.listen(port, '0.0.0.0', () => console.log("🚀 Servidor rodando em http://localhost:3000"));
 
 // definir a rota default;
 app.get("/", (req: Request, res: Response) => {
