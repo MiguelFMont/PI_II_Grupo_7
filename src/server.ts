@@ -95,7 +95,7 @@ app.listen(port, '0.0.0.0', () => console.log("🚀 Servidor rodando em http://l
 
 // definir a rota default;
 app.get("/", (req: Request, res: Response) => {
-    res.send("Rota default. Server port: 3000");
+    res.sendFile(path.join(__dirname+'../index.html'));
 });
 
 // rota de ping/pong (teste de requisicao)
