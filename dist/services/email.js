@@ -5,7 +5,8 @@ exports.enviarCodigoVerificacao = enviarCodigoVerificacao;
 const resend_1 = require("resend");
 const resend = new resend_1.Resend(process.env.RESEND_API_KEY);
 function gerarCodigoVericacao() {
-    return Math.floor(100000 + Math.random() * 900000).toString();
+    const codigo = Math.floor(100000 + Math.random() * 900000).toString();
+    return codigo;
 }
 async function enviarCodigoVerificacao(email, nome, codigo) {
     try {

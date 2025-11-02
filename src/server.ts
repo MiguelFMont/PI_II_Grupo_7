@@ -22,55 +22,76 @@ import {
 
 const app = express();
 const port: number = 3000;
+let codigoAtivo: string;
 
 app.use(bodyParser.json());
 app.use(cors());
 
 //definindo as rotas
 
-app.get("/estudantes", async (req: Request, res: Response) => {
-    try {
-        const estudantes = await getAllEstudantes();
-        res.json(estudantes);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({
-            "error": "Erro ao buscar estudantes"
-        });
+// app.get("/estudantes", async (req: Request, res: Response) => {
+//     try {
+//         const estudantes = await getAllEstudantes();
+//         res.json(estudantes);
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json({
+//             "error": "Erro ao buscar estudantes"
+//         });
+//     }
+// });
+
+// //rota para obter um estudante pelo ID.
+
+// app.get("/estudantes/:id", async (req: Request, res: Response) => {
+//     try {
+//         const id = Number(req.params.id);
+//         const estudante = await getEstudanteById(id);
+//         if (estudante) {
+//             res.json(estudante);
+//         } else {
+//             res.status(404).json({ massage: "Estudante não encontrado com o ID fornecido" })
+//         }
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: "Erro ao buscar estudante pelo ID fornecido." })
+//     }
+// });
+
+// // Rota para inserir um estudante.
+// app.post("/estudante", async (req: Request, res: Response) => {
+//     try {
+//         const { ra, nome, email } = req.body;
+//         if (!ra || !nome || !email) {
+//             return res.status(400).json({ error: "Campos RA, Nome e Email são obrigatórios" });
+//         }
+//         const id = await addEstudante(ra, nome, email);
+//         res.status(201).json({ message: "Estudante adicionado com sucesso", id });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: "Erro ao inserir estudante." })
+//     }
+// })
+
+app.post('/verificar-codigo', async (req: Request, res: Response) => {
+    const { codigo }= req.body;
+
+    const codigoCerto: string = codigoAtivo;
+
+    console.log(`Verificando o código: ${codigoCerto}`, req.body );
+
+    if(!codigoCerto) {
+        return res.status(400).json({ sucesso: false, mensagem: "Código não encontrado ou expirado!"})
     }
+
+    if(codigoCerto === codigo) {
+        codigoAtivo = '';
+        return res.json({ sucesso: true, mensagem: "Código verificado com sucesso!"});
+    } else {
+        return res.status(400).json({ sucesso: false, mensagem: "Código incorreto."})
+    }
+
 });
-
-//rota para obter um estudante pelo ID.
-
-app.get("/estudantes/:id", async (req: Request, res: Response) => {
-    try {
-        const id = Number(req.params.id);
-        const estudante = await getEstudanteById(id);
-        if (estudante) {
-            res.json(estudante);
-        } else {
-            res.status(404).json({ massage: "Estudante não encontrado com o ID fornecido" })
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Erro ao buscar estudante pelo ID fornecido." })
-    }
-});
-
-// Rota para inserir um estudante.
-app.post("/estudante", async (req: Request, res: Response) => {
-    try {
-        const { ra, nome, email } = req.body;
-        if (!ra || !nome || !email) {
-            return res.status(400).json({ error: "Campos RA, Nome e Email são obrigatórios" });
-        }
-        const id = await addEstudante(ra, nome, email);
-        res.status(201).json({ message: "Estudante adicionado com sucesso", id });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Erro ao inserir estudante." })
-    }
-})
 
 app.post('/enviar-codigo', async (req: Request, res: Response) => {
 
@@ -81,6 +102,8 @@ app.post('/enviar-codigo', async (req: Request, res: Response) => {
         const codigo = gerarCodigoVericacao();
 
         await enviarCodigoVerificacao(email, nome, codigo);
+
+        codigoAtivo = codigo;
 
         res.json({
             mensagem: 'Código enviado',

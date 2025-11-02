@@ -16,7 +16,7 @@ const inputSenha = document.querySelector("#password");
 const inputNome = document.querySelector("#name");
 const inputTelefone = document.querySelector("#telefone");
 
-const telefoneInput = document.getElementById('telefone');
+// const telefoneInput = document.getElementById('telefone');
 
 // telefoneInput.addEventListener('input', (e) => {
 //     let valor = e.target.value.replace(/\D/g, ''); // só números
@@ -51,6 +51,7 @@ const telefoneInput = document.getElementById('telefone');
 // --- Botões ---
 const botaoLogin = document.querySelector(".buttonLogin");
 const botaoCadastro = document.querySelector(".buttonSignUp");
+const botaoVerify = document.querySelector(".verify-btn");
 
 // --- Labels originais ---
 const originalLabels = {
@@ -252,3 +253,57 @@ if (botaoCadastro) {
         }
     });
 });
+
+// pageVerification.html - Manter o email preenchido
+
+const inputsCodigo = [
+    document.getElementById("num1"),
+    document.getElementById("num2"),
+    document.getElementById("num3"),
+    document.getElementById("num4"),
+    document.getElementById("num5"),
+    document.getElementById("num6")
+];
+
+inputsCodigo.forEach((input, index) => {
+    input.addEventListener("input", () => {
+        if (input.value.length > 0 && index < inputsCodigo.length - 1) {
+            inputsCodigo[index + 1].focus();
+        }
+    });
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && input.value.length === 0 && index > 0) {
+            inputsCodigo[index - 1].focus();
+        }
+    });
+});
+
+if (botaoVerify) {
+    botaoVerify.addEventListener("click", (e) => {
+        if (e) e.preventDefault();
+        let codigoCompleto = '';
+
+        for (let i = 0; i < inputsCodigo.length; i++) {
+            codigoCompleto += inputsCodigo[i] ? inputsCodigo[i].value.trim() : '';
+        }
+
+        fetch("http://localhost:3000/verificar-codigo", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ codigo: codigoCompleto })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.sucesso) {
+                    alert("Código verificado com sucesso! Você será redirecionado para a página inicial.");
+                    window.location.href = "../index.html";
+                } else {
+                    alert("Código inválido. Tente novamente.");
+                }
+            })
+            .catch(err => {
+                console.error("Erro ao verificar código:", err);
+                alert("Ocorreu um erro ao verificar o código. Tente novamente mais tarde.");
+            });
+    });
+}
